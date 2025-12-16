@@ -8,7 +8,11 @@ func _ready():
 	http_request.connect("request_completed", self.finished_thing)
 	
 func finished_thing(result, response_code, headers, body):
-	print("we did it")
+	var string_body = body.get_string_from_utf8()
+	print("result: ",result)
+	print("response: ",response_code)
+	print("headers: ", headers)
+	print("body: ", string_body)
 
 func makeBoard():
 	var url = baseURL+"makeBoard/"

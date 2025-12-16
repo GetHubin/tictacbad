@@ -45,8 +45,8 @@ polygon = PackedVector2Array(185, 123, 185, 200, 390, 201, 389, 129)
 
 [node name="Area2D2" type="Area2D" parent="."]
 script = ExtResource("1_0e48y")
-row = 0
-col = 1
+row = 1
+col = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D2"]
 position = Vector2(8, 121)
@@ -54,8 +54,8 @@ polygon = PackedVector2Array(185, 123, 185, 200, 390, 201, 389, 129)
 
 [node name="Area2D3" type="Area2D" parent="."]
 script = ExtResource("1_0e48y")
-row = 2
-col = 0
+row = 0
+col = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D3"]
 position = Vector2(405, -3)
@@ -99,8 +99,8 @@ polygon = PackedVector2Array(185, 123, 185, 200, 284, 195, 278, 163, 280, 127)
 
 [node name="Area2D8" type="Area2D" parent="."]
 script = ExtResource("1_0e48y")
-row = 1
-col = 0
+row = 0
+col = 1
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D8"]
 position = Vector2(261, 0)
