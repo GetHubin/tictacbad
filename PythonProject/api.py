@@ -9,7 +9,7 @@ def make_board():
     with open("PythonProject/tictactoestart.json", "r") as inp:
         data = inp.read()
 
-    with open("PythonProject/tictactoe.json", "w") as outp:
+    with open("PythonProject/tictactioe/data/tictactoe.json", "w") as outp:
         outp.write(data)
 
     return {"status": "board reset"}
@@ -21,7 +21,7 @@ def make_move():
     col = str(data['col'])
     key = row+","+col
 
-    with open("PythonProject/tictactoe.json", "r") as inp:
+    with open("PythonProject/tictactioe/data/tictactoe.json", "r") as inp:
         json_data = json.load(inp)
     
     current_player = json_data['current_player']
@@ -32,7 +32,7 @@ def make_move():
         current_player = "X"
     json_data['current_player'] = current_player
 
-    with open("PythonProject/tictactoe.json", "w") as outp:
+    with open("PythonProject/tictactioe/data/tictactoe.json", "w") as outp:
         json.dump(json_data, outp, indent=2)
     return jsonify({"status": "ok"})
 

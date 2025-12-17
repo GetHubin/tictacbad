@@ -17,3 +17,7 @@ func tile_pressed(row, col):
 	print("hi mom")
 	print(row, " ", col)
 	ApiClient.makeMove(row, col);
+	_update_board()
+	
+func _update_board():
+	pass
