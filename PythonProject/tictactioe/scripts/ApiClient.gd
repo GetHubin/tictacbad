@@ -1,5 +1,8 @@
 extends Node
 
+signal board_updated(board_data: Dictionary)
+signal request_failed(error: String)
+
 @onready var http_request = HTTPRequest.new()
 @onready var baseURL = "http://127.0.0.1:5000/"
 
@@ -8,11 +11,18 @@ func _ready():
 	http_request.connect("request_completed", self.finished_thing)
 	
 func finished_thing(result, response_code, headers, body):
+	if response_code != 200:
+		emit_signal("request_failed", "HTTP %d" % response_code)
+		return
+		
 	var string_body = body.get_string_from_utf8()
-	print("result: ",result)
-	print("response: ",response_code)
-	print("headers: ", headers)
-	print("body: ", string_body)
+	var json = JSON.parse_string(string_body)
+	if json == null:
+		emit_signal("request_failed", "Invalid JSON")
+		return
+	
+	if json.has("board"):
+		emit_signal("board_updated", json["board"])
 
 func makeBoard():
 	var url = baseURL+"makeBoard/"
