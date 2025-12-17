@@ -14,11 +14,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-
+# When a tile is clicked, signal a tile is clicked with row and column data
 func clicked(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		emit_signal("tile_clicked", row, col)
-
-
-func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	pass # Replace with function body.
