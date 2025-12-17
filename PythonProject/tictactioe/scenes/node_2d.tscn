@@ -1,11 +1,11 @@
 [gd_scene load_steps=4 format=3 uid="uid://bwi0nj2onuf03"]
 
-[ext_resource type="Script" uid="uid://0jdvumb4dji" path="res://scripts/boardThingies.gd" id="1_0e48y"]
-[ext_resource type="Script" uid="uid://0ute4ddbx8rq" path="res://scripts/board.gd" id="1_epypp"]
-[ext_resource type="Texture2D" uid="uid://c8blu3puq5b4a" path="res://assets/icon2.svg" id="2_epypp"]
+[ext_resource type="Script" uid="uid://0ute4ddbx8rq" path="res://scripts/board.gd" id="1_rnjyy"]
+[ext_resource type="Script" uid="uid://0jdvumb4dji" path="res://scripts/boardThingies.gd" id="2_4vge2"]
+[ext_resource type="Texture2D" uid="uid://c8blu3puq5b4a" path="res://assets/icon2.svg" id="3_04qyp"]
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_epypp")
+script = ExtResource("1_rnjyy")
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 offset_left = 397.0
@@ -36,7 +36,7 @@ offset_bottom = 370.0
 color = Color(0.10747976, 0.10747973, 0.10747973, 1)
 
 [node name="Area2D" type="Area2D" parent="."]
-script = ExtResource("1_0e48y")
+script = ExtResource("2_4vge2")
 row = 0
 col = 0
 
@@ -44,7 +44,7 @@ col = 0
 polygon = PackedVector2Array(185, 123, 185, 200, 390, 201, 389, 129)
 
 [node name="Area2D2" type="Area2D" parent="."]
-script = ExtResource("1_0e48y")
+script = ExtResource("2_4vge2")
 row = 1
 col = 0
 
@@ -53,7 +53,7 @@ position = Vector2(8, 121)
 polygon = PackedVector2Array(185, 123, 185, 200, 390, 201, 389, 129)
 
 [node name="Area2D3" type="Area2D" parent="."]
-script = ExtResource("1_0e48y")
+script = ExtResource("2_4vge2")
 row = 0
 col = 2
 
@@ -62,7 +62,7 @@ position = Vector2(405, -3)
 polygon = PackedVector2Array(185, 123, 185, 200, 390, 201, 389, 129)
 
 [node name="Area2D4" type="Area2D" parent="."]
-script = ExtResource("1_0e48y")
+script = ExtResource("2_4vge2")
 row = 1
 col = 2
 
@@ -71,7 +71,7 @@ position = Vector2(406, 122)
 polygon = PackedVector2Array(185, 123, 185, 200, 390, 201, 389, 129)
 
 [node name="Area2D5" type="Area2D" parent="."]
-script = ExtResource("1_0e48y")
+script = ExtResource("2_4vge2")
 row = 2
 col = 2
 
@@ -80,7 +80,7 @@ position = Vector2(407, 250)
 polygon = PackedVector2Array(185, 123, 185, 200, 390, 201, 389, 129)
 
 [node name="Area2D6" type="Area2D" parent="."]
-script = ExtResource("1_0e48y")
+script = ExtResource("2_4vge2")
 row = 2
 col = 1
 
@@ -89,7 +89,7 @@ position = Vector2(262, 250)
 polygon = PackedVector2Array(185, 123, 185, 200, 284, 195, 278, 163, 280, 127)
 
 [node name="Area2D7" type="Area2D" parent="."]
-script = ExtResource("1_0e48y")
+script = ExtResource("2_4vge2")
 row = 1
 col = 1
 
@@ -98,7 +98,7 @@ position = Vector2(259, 124)
 polygon = PackedVector2Array(185, 123, 185, 200, 284, 195, 278, 163, 280, 127)
 
 [node name="Area2D8" type="Area2D" parent="."]
-script = ExtResource("1_0e48y")
+script = ExtResource("2_4vge2")
 row = 0
 col = 1
 
@@ -107,7 +107,7 @@ position = Vector2(261, 0)
 polygon = PackedVector2Array(185, 123, 185, 200, 284, 195, 278, 163, 280, 127)
 
 [node name="Area2D9" type="Area2D" parent="."]
-script = ExtResource("1_0e48y")
+script = ExtResource("2_4vge2")
 row = 2
 col = 0
 
@@ -129,50 +129,50 @@ offset_right = 102.0
 offset_bottom = 279.0
 color = Color(0, 0.3444244, 0.3864528, 1)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="S_0_0" type="Sprite2D" parent="."]
 position = Vector2(299, 169)
 scale = Vector2(1, 0.26562497)
-texture = ExtResource("2_epypp")
+texture = ExtResource("3_04qyp")
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
+[node name="S_0_1" type="Sprite2D" parent="."]
 position = Vector2(494, 168)
 scale = Vector2(1, 0.26562497)
-texture = ExtResource("2_epypp")
+texture = ExtResource("3_04qyp")
 
-[node name="Sprite2D3" type="Sprite2D" parent="."]
+[node name="S_0_2" type="Sprite2D" parent="."]
 position = Vector2(700, 174)
 scale = Vector2(1, 0.26562497)
-texture = ExtResource("2_epypp")
+texture = ExtResource("3_04qyp")
 
-[node name="Sprite2D4" type="Sprite2D" parent="."]
+[node name="S_1_0" type="Sprite2D" parent="."]
 position = Vector2(304, 276)
 scale = Vector2(1, 0.26562497)
-texture = ExtResource("2_epypp")
+texture = ExtResource("3_04qyp")
 
-[node name="Sprite2D5" type="Sprite2D" parent="."]
+[node name="S_1_1" type="Sprite2D" parent="."]
 position = Vector2(491, 288)
 scale = Vector2(1, 0.26562497)
-texture = ExtResource("2_epypp")
+texture = ExtResource("3_04qyp")
 
-[node name="Sprite2D6" type="Sprite2D" parent="."]
+[node name="S_1_2" type="Sprite2D" parent="."]
 position = Vector2(693, 288)
 scale = Vector2(1, 0.26562497)
-texture = ExtResource("2_epypp")
+texture = ExtResource("3_04qyp")
 
-[node name="Sprite2D7" type="Sprite2D" parent="."]
+[node name="S_2_0" type="Sprite2D" parent="."]
 position = Vector2(283, 412)
 scale = Vector2(1, 0.26562497)
-texture = ExtResource("2_epypp")
+texture = ExtResource("3_04qyp")
 
-[node name="Sprite2D8" type="Sprite2D" parent="."]
+[node name="S_2_1" type="Sprite2D" parent="."]
 position = Vector2(494, 409)
 scale = Vector2(1, 0.26562497)
-texture = ExtResource("2_epypp")
+texture = ExtResource("3_04qyp")
 
-[node name="Sprite2D9" type="Sprite2D" parent="."]
+[node name="S_2_2" type="Sprite2D" parent="."]
 position = Vector2(701, 413)
 scale = Vector2(1, 0.26562497)
-texture = ExtResource("2_epypp")
+texture = ExtResource("3_04qyp")
 
 [connection signal="input_event" from="Area2D" to="Area2D" method="clicked"]
 [connection signal="input_event" from="Area2D2" to="Area2D2" method="clicked"]

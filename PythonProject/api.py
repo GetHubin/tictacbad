@@ -34,7 +34,7 @@ def make_move():
 
     with open("PythonProject/tictactioe/data/tictactoe.json", "w") as outp:
         json.dump(json_data, outp, indent=2)
-    return jsonify({"status": "ok"})
+    return jsonify({"status": "ok", "board": json_data["board"], "current_player": json_data["current_player"]})
 
 def check_game_over():
     pass
