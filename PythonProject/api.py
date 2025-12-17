@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route("/makeBoard/", methods=["POST"])
 def make_board():
-    with open("PythonProject/tictactoestart.json", "r") as inp:
+    with open("PythonProject/tictactioe/data/tictactoestart.json", "r") as inp:
         data = inp.read()
 
     with open("PythonProject/tictactioe/data/tictactoe.json", "w") as outp:

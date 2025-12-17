@@ -7,10 +7,14 @@ signal request_failed(error: String)
 @onready var http_request = HTTPRequest.new()
 @onready var baseURL = "http://127.0.0.1:5000/"
 
+# Called when the node enters the scene tree for the first time.
 func _ready():
+	# http request initialization
 	add_child(http_request)
 	http_request.connect("request_completed", self.finished_thing)
-	
+
+# Called when a request is completed, signals information obtained
+# from request (or whatever error occurred)
 func finished_thing(result, response_code, headers, body):
 	# Check for error code
 	if response_code != 200:
