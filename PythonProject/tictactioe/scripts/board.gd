@@ -15,6 +15,7 @@ var sprites := {} # "0,0" -> Sprite2D
 func _ready() -> void:
 	# When ApiClient signals the board info is updated, update board visually.
 	ApiClient.board_updated.connect(update_board)
+	ApiClient.game_over.connect(game_over_scene)
 	# Find tile sprites, put them correctly into sprites Dictionary.
 	for child in get_children():
 		if child is Sprite2D and child.name.begins_with("S_"):
@@ -52,5 +53,10 @@ func update_board(board_dict: Dictionary):
 			"Empty":
 				sprite.texture = empty_texture
 		
-		
-		
+func game_over_scene(winner: String):
+	if winner == "X":
+		get_tree().change_scene_to_file("res://scenes/xwins.tscn")
+	if winner == "O":
+		get_tree().change_scene_to_file("res://scenes/oscene.tscn")
+	if winner == "none":
+		get_tree().change_scene_to_file("res://scenes/tiescene.tscn")

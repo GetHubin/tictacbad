@@ -3,6 +3,7 @@ extends Node
 # Signals for when a response is received
 signal board_updated(board_data: Dictionary)
 signal request_failed(error: String)
+signal game_over(winner: String)
 
 @onready var http_request = HTTPRequest.new()
 @onready var baseURL = "http://127.0.0.1:5000/"
@@ -28,8 +29,13 @@ func finished_thing(result, response_code, headers, body):
 		emit_signal("request_failed", "Invalid JSON")
 		return
 	# If json data pertains to board, signal board update
-	if json.has("board"):
+	if json["status"] == "board_updated":
+		print(json)
 		emit_signal("board_updated", json["board"])
+	
+	# If json data has a winner key, signal game end
+	if json.has("winner"):
+		emit_signal("game_over", json["winner"])
 
 # This uses a POST request method that doesn't require/use any JSON information from the request.
 # It will copy tictactoestart.json to tictactoe.json, so the game is ready to begin.
