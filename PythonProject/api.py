@@ -1,8 +1,15 @@
 import json
+import os
 
 from flask import Flask, jsonify, request
 
 from tictactoe import Tictactoe
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+DATA_DIR = os.path.join(BASE_DIR, "tictactioe", "data")
+START_PATH = os.path.join(DATA_DIR, "tictactoestart.json")
+GAME_PATH = os.path.join(DATA_DIR, "tictactoe.json")
 
 # This is a server that processes requests for a tic tac toe game. You can make a board
 # or make a move.
@@ -17,10 +24,10 @@ game = Tictactoe()
 def make_board():
     game.start_board()
     # Get start info from json file.
-    with open("PythonProject/tictactioe/data/tictactoestart.json", "r") as inp:
+    with open(START_PATH, "r") as inp:
         data = inp.read()
-    # Write start info to game state json file.
-    with open("PythonProject/tictactioe/data/tictactoe.json", "w") as outp:
+
+    with open(GAME_PATH, "w") as outp:
         outp.write(data)
     json_data = json.loads(data)
     # Create models
@@ -42,7 +49,7 @@ def make_move():
     col = str(data['col'])
     key = row+","+col
     # Get current game state info from json file, store in variable.
-    with open("PythonProject/tictactioe/data/tictactoe.json", "r") as inp:
+    with open(GAME_PATH, "r") as inp:
         json_data = json.load(inp)
     # Check if tile can be played on.
     if game.is_valid_move(int(row), int(col)):
@@ -60,9 +67,9 @@ def make_move():
         current_player = "X"
     json_data['current_player'] = current_player
     # Update current game state json file.
-    with open("PythonProject/tictactioe/data/tictactoe.json", "w") as outp:
+    with open(GAME_PATH, "w") as outp:
         json.dump(json_data, outp, indent=2)
-    
+
     if game.check_game_end(row, col) == True:
         return jsonify({
             "winner": game.get_winner(),
