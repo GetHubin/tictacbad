@@ -31,7 +31,7 @@ func finished_thing(result, response_code, headers, body):
 	# If json data pertains to board, signal board update
 	if json["status"] == "board_updated":
 		print(json)
-		emit_signal("board_updated", json["board"])
+		emit_signal("board_updated", json["board"], json["current_player"])
 	
 	# If json data has a winner key, signal game end
 	if json.has("winner"):
@@ -56,6 +56,15 @@ func makeMove(row, col):
 	# Initialize args for request
 	var url = baseURL+"makeMove/"
 	var jsonRC = { "row": row, "col": col}
+	var json_string = JSON.stringify(jsonRC)
+	var headers = ["Content-Type: application/json"]
+	# Make request
+	http_request.request(url, headers, HTTPClient.METHOD_POST, json_string)
+	
+func end_game():
+		# Initialize args for request
+	var url = baseURL+"gameEnd/"
+	var jsonRC = {}
 	var json_string = JSON.stringify(jsonRC)
 	var headers = ["Content-Type: application/json"]
 	# Make request

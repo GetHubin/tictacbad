@@ -1,44 +1,106 @@
-[gd_scene load_steps=6 format=3 uid="uid://bwi0nj2onuf03"]
+[gd_scene load_steps=15 format=3 uid="uid://bwi0nj2onuf03"]
 
 [ext_resource type="Script" uid="uid://0ute4ddbx8rq" path="res://scripts/board.gd" id="1_rnjyy"]
-[ext_resource type="Texture2D" uid="uid://c25vbhoyk4448" path="res://assets/download.jpg" id="2_04qyp"]
 [ext_resource type="Script" uid="uid://0jdvumb4dji" path="res://scripts/boardThingies.gd" id="2_4vge2"]
-[ext_resource type="Texture2D" uid="uid://c8blu3puq5b4a" path="res://assets/icon2.svg" id="3_04qyp"]
-[ext_resource type="Texture2D" uid="uid://c2v72ew5hrhy3" path="res://assets/download (1).jpg" id="3_j7wrs"]
+[ext_resource type="Texture2D" uid="uid://ggjacm14lhm2" path="res://assets/sprites/players/x.png" id="2_j7wrs"]
+[ext_resource type="Texture2D" uid="uid://baaa0dbmtsb0t" path="res://assets/sprites/players/o.png" id="3_fws66"]
+[ext_resource type="Texture2D" uid="uid://bmogtnmj7fndc" path="res://assets/sprites/board.png" id="5_j7wrs"]
+[ext_resource type="FontFile" uid="uid://bg0mmd5f5v1fx" path="res://assets/fonts/LEMONMILK-Regular.otf" id="6_j7wrs"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_04qyp"]
+bg_color = Color(0.80813736, 3.272891e-06, 7.70092e-07, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j7wrs"]
+bg_color = Color(0.39106378, 4.061032e-07, 1.4439226e-07, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fws66"]
+bg_color = Color(0.6122994, 7.70092e-07, 4.3317675e-07, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hh0fu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3m5ht"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3m5ht"]
+bg_color = Color(0, 0.3764706, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dubn7"]
+bg_color = Color(2.2110063e-07, 0.1526492, 2.4065375e-08, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_08kqv"]
+bg_color = Color(7.2797764e-07, 0.2776845, 2.4065375e-08, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_rnjyy")
-x_texture = ExtResource("2_04qyp")
-o_texture = ExtResource("3_j7wrs")
-empty_texture = ExtResource("3_04qyp")
+x_texture = ExtResource("2_j7wrs")
+o_texture = ExtResource("3_fws66")
 
-[node name="ColorRect2" type="ColorRect" parent="."]
-offset_left = 397.0
-offset_top = 136.0
-offset_right = 437.0
-offset_bottom = 417.0
-color = Color(0.10747976, 0.10747973, 0.10747973, 1)
+[node name="WinnerSprite" type="Sprite2D" parent="."]
+position = Vector2(851.5, 87.5)
+scale = Vector2(0.75, 0.75)
 
-[node name="ColorRect3" type="ColorRect" parent="."]
-offset_left = 546.0
-offset_top = 135.0
-offset_right = 586.0
-offset_bottom = 416.0
-color = Color(0.10747976, 0.10747973, 0.10747973, 1)
+[node name="TurnSprite" type="Sprite2D" parent="."]
+position = Vector2(1076, 97)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("3_fws66")
 
-[node name="ColorRect4" type="ColorRect" parent="."]
-offset_left = 185.0
-offset_top = 205.0
-offset_right = 835.0
-offset_bottom = 246.0
-color = Color(0.10747976, 0.10747973, 0.10747973, 1)
-
-[node name="ColorRect5" type="ColorRect" parent="."]
-offset_left = 162.0
-offset_top = 329.0
-offset_right = 812.0
-offset_bottom = 370.0
-color = Color(0.10747976, 0.10747973, 0.10747973, 1)
+[node name="BoardSprite" type="Sprite2D" parent="."]
+position = Vector2(994.00006, 619.50006)
+scale = Vector2(1.2893674, 1.1599463)
+texture = ExtResource("5_j7wrs")
 
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("2_4vge2")
@@ -46,7 +108,8 @@ row = 0
 col = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
-polygon = PackedVector2Array(185, 123, 185, 200, 390, 201, 389, 129)
+position = Vector2(394, 164)
+polygon = PackedVector2Array(119, 26, 121, 315, 437, 315, 437, 25)
 
 [node name="Area2D2" type="Area2D" parent="."]
 script = ExtResource("2_4vge2")
@@ -54,8 +117,8 @@ row = 1
 col = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D2"]
-position = Vector2(8, 121)
-polygon = PackedVector2Array(185, 123, 185, 200, 390, 201, 389, 129)
+position = Vector2(378, 463)
+polygon = PackedVector2Array(137, 16, 138, 308, 453, 309, 453, 16)
 
 [node name="Area2D3" type="Area2D" parent="."]
 script = ExtResource("2_4vge2")
@@ -63,8 +126,8 @@ row = 0
 col = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D3"]
-position = Vector2(405, -3)
-polygon = PackedVector2Array(185, 123, 185, 200, 390, 201, 389, 129)
+position = Vector2(1027, 179)
+polygon = PackedVector2Array(129, 10, 130, 299, 445, 300, 442, 11)
 
 [node name="Area2D4" type="Area2D" parent="."]
 script = ExtResource("2_4vge2")
@@ -72,8 +135,8 @@ row = 1
 col = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D4"]
-position = Vector2(406, 122)
-polygon = PackedVector2Array(185, 123, 185, 200, 390, 201, 389, 129)
+position = Vector2(1020, 465)
+polygon = PackedVector2Array(137, 13, 136, 307, 451, 306, 452, 14)
 
 [node name="Area2D5" type="Area2D" parent="."]
 script = ExtResource("2_4vge2")
@@ -81,8 +144,8 @@ row = 2
 col = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D5"]
-position = Vector2(407, 250)
-polygon = PackedVector2Array(185, 123, 185, 200, 390, 201, 389, 129)
+position = Vector2(1027, 735)
+polygon = PackedVector2Array(129, 37, 129, 315, 453, 320, 444, 36)
 
 [node name="Area2D6" type="Area2D" parent="."]
 script = ExtResource("2_4vge2")
@@ -90,8 +153,8 @@ row = 2
 col = 1
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D6"]
-position = Vector2(262, 250)
-polygon = PackedVector2Array(185, 123, 185, 200, 284, 195, 278, 163, 280, 127)
+position = Vector2(773, 747)
+polygon = PackedVector2Array(58, 25, 58, 302, 383, 303, 383, 25)
 
 [node name="Area2D7" type="Area2D" parent="."]
 script = ExtResource("2_4vge2")
@@ -99,8 +162,8 @@ row = 1
 col = 1
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D7"]
-position = Vector2(259, 124)
-polygon = PackedVector2Array(185, 123, 185, 200, 284, 195, 278, 163, 280, 127)
+position = Vector2(739, 467)
+polygon = PackedVector2Array(92, 12, 92, 305, 417, 305, 418, 11)
 
 [node name="Area2D8" type="Area2D" parent="."]
 script = ExtResource("2_4vge2")
@@ -108,8 +171,8 @@ row = 0
 col = 1
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D8"]
-position = Vector2(261, 0)
-polygon = PackedVector2Array(185, 123, 185, 200, 284, 195, 278, 163, 280, 127)
+position = Vector2(769, 189)
+polygon = PackedVector2Array(62, 0, 62, 290, 388, 289, 387, 0)
 
 [node name="Area2D9" type="Area2D" parent="."]
 script = ExtResource("2_4vge2")
@@ -117,67 +180,89 @@ row = 2
 col = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D9"]
-position = Vector2(-1, 250)
-polygon = PackedVector2Array(185, 123, 185, 200, 390, 201, 389, 129)
-
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = 67.0
-offset_top = 138.0
-offset_right = 107.0
-offset_bottom = 178.0
-color = Color(0.57254905, 0.05490196, 0.05490196, 1)
-
-[node name="ColorRect6" type="ColorRect" parent="."]
-offset_left = 62.0
-offset_top = 239.0
-offset_right = 102.0
-offset_bottom = 279.0
-color = Color(0, 0.3444244, 0.3864528, 1)
+position = Vector2(388, 736)
+polygon = PackedVector2Array(128, 35, 127, 314, 443, 313, 443, 36)
 
 [node name="S_0_0" type="Sprite2D" parent="."]
-position = Vector2(299, 169)
-scale = Vector2(1, 0.26562497)
-texture = ExtResource("3_04qyp")
+position = Vector2(673, 330)
 
 [node name="S_0_1" type="Sprite2D" parent="."]
-position = Vector2(494, 168)
-scale = Vector2(1, 0.26562497)
-texture = ExtResource("3_04qyp")
+position = Vector2(994, 336)
 
 [node name="S_0_2" type="Sprite2D" parent="."]
-position = Vector2(700, 174)
-scale = Vector2(1, 0.26562497)
-texture = ExtResource("3_04qyp")
+position = Vector2(1309, 346)
 
 [node name="S_1_0" type="Sprite2D" parent="."]
-position = Vector2(304, 276)
-scale = Vector2(1, 0.26562497)
-texture = ExtResource("3_04qyp")
+position = Vector2(676, 625)
 
 [node name="S_1_1" type="Sprite2D" parent="."]
-position = Vector2(491, 288)
-scale = Vector2(1, 0.26562497)
-texture = ExtResource("3_04qyp")
+position = Vector2(997, 622.00006)
 
 [node name="S_1_2" type="Sprite2D" parent="."]
-position = Vector2(693, 288)
-scale = Vector2(1, 0.26562497)
-texture = ExtResource("3_04qyp")
+position = Vector2(1311, 621)
 
 [node name="S_2_0" type="Sprite2D" parent="."]
-position = Vector2(283, 412)
-scale = Vector2(1, 0.26562497)
-texture = ExtResource("3_04qyp")
+position = Vector2(682, 906)
 
 [node name="S_2_1" type="Sprite2D" parent="."]
-position = Vector2(494, 409)
-scale = Vector2(1, 0.26562497)
-texture = ExtResource("3_04qyp")
+position = Vector2(992, 905)
 
 [node name="S_2_2" type="Sprite2D" parent="."]
-position = Vector2(701, 413)
-scale = Vector2(1, 0.26562497)
-texture = ExtResource("3_04qyp")
+position = Vector2(1316, 898.00006)
+
+[node name="ExitButton" type="Button" parent="."]
+offset_left = 21.0
+offset_top = 47.0
+offset_right = 234.0
+offset_bottom = 133.0
+theme_override_font_sizes/font_size = 66
+theme_override_styles/normal = SubResource("StyleBoxFlat_04qyp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_j7wrs")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fws66")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_hh0fu")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3m5ht")
+text = "Exit"
+
+[node name="PlayAgainButton" type="Button" parent="."]
+offset_left = 1509.0
+offset_top = 47.0
+offset_right = 1874.0
+offset_bottom = 171.0
+theme_override_font_sizes/font_size = 66
+theme_override_styles/normal = SubResource("StyleBoxFlat_3m5ht")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dubn7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_08kqv")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_hh0fu")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3m5ht")
+text = "Play again"
+
+[node name="TieText" type="Label" parent="."]
+offset_left = 800.0
+offset_top = 35.0
+offset_right = 1185.0
+offset_bottom = 142.0
+theme_override_fonts/font = ExtResource("6_j7wrs")
+theme_override_font_sizes/font_size = 80
+horizontal_alignment = 1
+
+[node name="TurnText" type="Label" parent="."]
+offset_left = 740.0
+offset_top = 35.0
+offset_right = 993.0
+offset_bottom = 142.0
+theme_override_fonts/font = ExtResource("6_j7wrs")
+theme_override_font_sizes/font_size = 80
+text = "Turn:"
+horizontal_alignment = 1
+
+[node name="WinText" type="Label" parent="."]
+offset_left = 933.5
+offset_top = 36.5
+offset_right = 1168.5
+offset_bottom = 143.5
+theme_override_fonts/font = ExtResource("6_j7wrs")
+theme_override_font_sizes/font_size = 80
+horizontal_alignment = 1
 
 [connection signal="input_event" from="Area2D" to="Area2D" method="clicked"]
 [connection signal="input_event" from="Area2D2" to="Area2D2" method="clicked"]
@@ -188,3 +273,5 @@ texture = ExtResource("3_04qyp")
 [connection signal="input_event" from="Area2D7" to="Area2D7" method="clicked"]
 [connection signal="input_event" from="Area2D8" to="Area2D8" method="clicked"]
 [connection signal="input_event" from="Area2D9" to="Area2D9" method="clicked"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="PlayAgainButton" to="." method="_on_play_again_button_pressed"]

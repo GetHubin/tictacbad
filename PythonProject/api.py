@@ -33,7 +33,7 @@ def make_board():
     # Create models
     game.update_board(json_data)
     # Return update status.
-    return {"status": "board_updated", "board": json_data["board"]}
+    return {"status": "board_updated", "board": json_data["board"], "current_player": json_data["current_player"]}
 
 # POST method that requires the following JSON infomation to be passed to it:
 # "row": the row a move has been made at
@@ -80,7 +80,6 @@ def make_move():
     else:
         # Return update status, current board state in json, and current player information.
         return jsonify({"status": "board_updated", "board": json_data["board"], "current_player": json_data["current_player"]})
-
 
 if __name__ == "__main__":
     app.run()
