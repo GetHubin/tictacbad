@@ -7,8 +7,6 @@ extends Node2D
 
 # Dictionary to map tic tac toe coordinates to Sprites
 var sprites := {} # "0,0" -> Sprite2D
-var play_again_styles := {}
-var OFF_SCREEN = Vector2(10000, 10000)
 @onready var play_again_button = $PlayAgainButton
 @onready var play_again_button_pos = $PlayAgainButton.position
 @onready var turn_sprite = $TurnSprite
@@ -22,8 +20,7 @@ var OFF_SCREEN = Vector2(10000, 10000)
 # of tic tac toe coordinates to tile sprites, and the board. Also connects
 # Tile clicks with tile_clicked function.
 func _ready() -> void:
-	get_play_again_styles()
-	make_play_again_button_disappear()
+	play_again_button.visible = false
 	# When ApiClient signals the board info is updated, update board visually.
 	ApiClient.board_updated.connect(update_board)
 	ApiClient.game_over.connect(game_over_scene)
@@ -75,7 +72,7 @@ func update_turn(current_player: String):
 func game_over_scene(winner: String):
 	turn_text.text = ""
 	turn_sprite.texture = empty_texture
-	bring_play_again_button_back()
+	play_again_button.visible = true
 	if winner == "X":
 		winner_sprite.texture = x_texture
 		winner_text.text = "wins!"
@@ -104,17 +101,4 @@ func _on_play_again_button_pressed() -> void:
 	for tile in get_children():
 		if tile.has_signal("tile_clicked"):
 			tile.tile_clicked.connect(tile_pressed)
-	make_play_again_button_disappear()
-
-func get_play_again_styles():
-	play_again_styles["normal"] = play_again_button.get_theme_stylebox("normal")
-	play_again_styles["pressed"] = play_again_button.get_theme_stylebox("pressed")
-	play_again_styles["hover"] = play_again_button.get_theme_stylebox("hover")
-	play_again_styles["disabled"] = play_again_button.get_theme_stylebox("disabled")
-	
-func make_play_again_button_disappear():
-	play_again_button.position = OFF_SCREEN
-	
-	
-func bring_play_again_button_back():
-	play_again_button.position = play_again_button_pos
+	play_again_button.visible = false
