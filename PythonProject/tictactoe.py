@@ -1,5 +1,3 @@
-
-
 class Tictactoe:
 
 
@@ -17,21 +15,17 @@ class Tictactoe:
         self.winner = "none"
     
     def update_board(self, data: dict):
-        print("agggggggggggggggggggg")
         for key in data["board"]:
             # Get coordinates from key
             coords = key.split(",")
             x = int(coords[0])
             y = int(coords[1])
-            print(data["board"][key])
             self.board[x][y] = data["board"][key]
 
     def is_valid_move(self, x: int, y: int):
         if self.board[x][y] != "Empty":
-            print(self.board[x][y]+"hello mom")
             return False
         else: 
-            print("goodbye mom")
             return True
         
     def check_game_end(self, r, c):
